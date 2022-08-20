@@ -1,6 +1,5 @@
 <p align="center"><img src="void2d\media\Void2DIcon.png" width="200"><br><span style="font-weight: 0px; font-size: 20px;"><i>Welcome to Void2D!</i></span></p>
 <p align="center">
-<img src="https://img.shields.io/github/v/release/xzripper/Void2D?color=white&style=for-the-badge">
 <img src="https://img.shields.io/github/issues/xzripper/Void2D?color=red&style=for-the-badge">
 <img src="https://img.shields.io/github/issues-pr/xzripper/Void2D?color=green&style=for-the-badge">
 <img src="https://img.shields.io/github/stars/xzripper/Void2D?color=blue&style=for-the-badge">
