@@ -4,6 +4,7 @@
 <img src="https://img.shields.io/github/issues/xzripper/Void2D?color=red&style=for-the-badge">
 <img src="https://img.shields.io/github/issues-pr/xzripper/Void2D?color=green&style=for-the-badge">
 <img src="https://img.shields.io/github/stars/xzripper/Void2D?color=blue&style=for-the-badge">
+<br><br><a href="https://discord.gg/Bg6b4qGnvE"><b><i>Engine Discord.</i></b></a>
 </p>
 
 ### What is that "Void2D"?
