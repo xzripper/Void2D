@@ -165,5 +165,5 @@ There is no too much of difference between SafeSave and SaveConfig.<br>
 SafeConfig created only for better readability.<br>
 
 #### Message.
-You completed this chapter, now you can go to "Prop.md".
+You completed this chapter, now you can go to "ObjectPhysics.md".
 <br>Good luck!
