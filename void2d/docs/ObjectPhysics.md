@@ -5,10 +5,10 @@ I think you already created your project and window!
 ## What is that?
 ObjectPhysics - Built-in engine physics that provides simple gravity system, prop physics (like rigid body), and more.
 
-### First step: Import *void2d.ObjectPhysics*.
+### First step: Import *void2d.enginePhysics.ObjectPhysics*.
+
 ```java
 import void2d.Window;
-import void2d.ObjectPhysics; // <- Importing.
 
 public class Main {
     public static void main(String[] args) {
@@ -20,12 +20,13 @@ public class Main {
 ```
 
 ### Second step: Attach (initialize) physics to object (sprite in our case).
+
 ```java
 import void2d.Window;
 
 import void2d.Sprite;
 
-import void2d.ObjectPhysics;
+import void2d.enginePhysics.ObjectPhysics;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,7 +38,7 @@ public class Main {
 
             "path\\to\\sprite.png",
 
-            new int[] {0, 0},
+            new int[]{0, 0},
 
             null
         );

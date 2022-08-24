@@ -6,7 +6,7 @@ import void2d.Window;
 import void2d.Sprite;
 import void2d.Colors;
 import void2d.Keyboard;
-import void2d.ObjectPhysics;
+import void2d.enginePhysics.ObjectPhysics;
 import void2d.Prop;
 import void2d.ScreenSides;
 
@@ -59,7 +59,7 @@ public class SimplestRunner {
 
         playerPhysics.addProp(anotherPlayerProp);
 
-        playerPhysics.runHandlers(gameWindow, SimplestRunner::onEnter, SimplestRunner::onExit);
+        playerPhysics.runHandlers(SimplestRunner::onEnter, SimplestRunner::onExit);
 
         Keyboard keysHandler = new Keyboard(
             new Consumer[] {

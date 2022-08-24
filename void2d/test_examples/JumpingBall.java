@@ -8,7 +8,7 @@ import void2d.Colors;
 
 import void2d.Sprite;
 
-import void2d.ObjectPhysics;
+import void2d.enginePhysics.ObjectPhysics;
 
 public class JumpingBall {
     public static void main(String[] args) {
@@ -59,7 +59,6 @@ public class JumpingBall {
         ballPhysics.setBouncy(true);
 
         ballPhysics.runHandlers(
-            gameWindow,
             null,
             null
         );

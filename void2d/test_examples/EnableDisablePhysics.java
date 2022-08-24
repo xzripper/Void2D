@@ -6,7 +6,7 @@ import void2d.Window;
 import void2d.Sprite;
 import void2d.Colors;
 import void2d.Keyboard;
-import void2d.ObjectPhysics;
+import void2d.enginePhysics.ObjectPhysics;
 import void2d.Prop;
 import void2d.ScreenSides;
 
@@ -93,7 +93,7 @@ public class EnableDisablePhysics {
 
                                 System.out.println("Physics disabled.");
                             } else {
-                                playerPhysics.runHandlers(gameWindow, EnableDisablePhysics::onEnter, EnableDisablePhysics::onExit);
+                                playerPhysics.runHandlers(EnableDisablePhysics::onEnter, EnableDisablePhysics::onExit);
 
                                 System.out.println("Physics enabled.");
                             }

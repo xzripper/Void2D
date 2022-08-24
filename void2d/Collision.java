@@ -39,7 +39,6 @@ public class Collision {
 
     }
 
-
     /**
      * Check, is game object intersects with game objects from array.<br>
      * Game objects doesn't need to have collisions.<br>

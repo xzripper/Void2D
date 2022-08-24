@@ -2,6 +2,8 @@
 
 package void2d;
 
+import void2d.enginePhysics.ObjectPhysics;
+
 /**
  * <h1>Bodies enumerator.</h1>
  * Bodies enumerator.<br>

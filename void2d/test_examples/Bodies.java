@@ -8,7 +8,7 @@ import void2d.Colors;
 
 import void2d.Sprite;
 
-import void2d.ObjectPhysics;
+import void2d.enginePhysics.ObjectPhysics;
 
 import void2d.Body;
 
@@ -62,7 +62,6 @@ public class Bodies {
         boxPhysics.setObjectMass(150);
 
         boxPhysics.runHandlers(
-            gameWindow,
             null,
             null
         );
@@ -91,7 +90,6 @@ public class Bodies {
         ballPhysics.addProp(new Prop(boxObject.sprite));
 
         ballPhysics.runHandlers(
-            gameWindow,
             null,
             null
         );
