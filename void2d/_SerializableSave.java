@@ -5,7 +5,7 @@ package void2d;
 import java.io.Serializable;
 import java.util.HashMap;
 
-public class _SerializableSave implements Serializable {
+class _SerializableSave implements Serializable {
     public HashMap<String, Object> dataToSave;
 
     public transient String saveFile;

@@ -15,7 +15,12 @@ public class EngineInfo {
     /**
      * Engine version.
      */
-    public final static float engineVersion = 1.1f;
+    public final static float engineVersion = 1.2f;
+
+    /**
+     * Is version in release.
+     */
+    public final static boolean engineVersionInRelease = true; // When developing new version - set to false. It fixes problems with path's.
 
     /**
      * Engine license.

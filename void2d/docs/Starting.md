@@ -55,7 +55,8 @@ Done!
 Any.
 
 ### Examples?
-You can look some examples in "void2d\test_examples"!
+You can look some examples in "void2d\test_examples"!<br><br>
+**Warning: Change path's to sprites in examples, to sprite path's that matching your directory (Note: remove "src\\" from path's).**
 
 #### Message.
 You finished this chapter, now you can go to "Window.md"!

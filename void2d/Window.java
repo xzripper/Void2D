@@ -80,7 +80,7 @@ public class Window {
 
         _window.setBounds(DEFAULT_WINDOW_X_POSITION, DEFAULT_WINDOW_Y_POSITION, width, height);
 
-        _window.setIconImage(new ImageIcon(System.getProperty("user.dir") + "\\src\\void2d\\media\\DefaultWindowIcon.png").getImage());
+        _window.setIconImage(new ImageIcon(EnginePartPathManager.accessEnginePartWithAbsolutePath("media\\DefaultWindowIcon.png")).getImage());
 
         _window.setResizable(resizable);
 
