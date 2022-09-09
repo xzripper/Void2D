@@ -58,9 +58,12 @@ Now you can add sprites to your window!
 public boolean destroyed = false;
 public JLabel sprite;
 public Collision spriteCollision;
+public HashMap<String, String> spriteStates = new HashMap<>();
+public String spriteState = "default";
+public int spriteStatePosition = 0;
+public String spriteName;
 public int[] position;
 public int[] size;
-public String spriteName;
 ```
 
 ### Methods.
@@ -70,6 +73,11 @@ public void destroy()
 public boolean isDestroyed()
 public void updateSpriteName(String newSpriteName)
 public String getSpriteName()
+public String getSpritePath()
+public void appendSpriteState(String stateName, String statePath)
+public void updateSpriteState(String stateName)
+public void nextSpriteState()
+public void previousSpriteState()
 public int[] getImageSize()
 public int[][] getSpriteProperties()
 public int[] getSpritePosition()

@@ -5,6 +5,8 @@ package void2d;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
+import java.util.HashMap;
+
 /**
  * <h1>Class for loading sprites into the game!</h1>
  */
@@ -29,6 +31,26 @@ public class Sprite {
     public Collision spriteCollision;
 
     /**
+     * All possible sprite states.
+     */
+    public HashMap<String, String> spriteStates = new HashMap<>();
+
+    /**
+     * Current sprite state.
+     */
+    public String spriteState = "default";
+
+    /**
+     * Current sprite state position.
+     */
+    public int spriteStatePosition = 0;
+
+    /**
+     * Sprite name. (Optional).
+     */
+    public String spriteName;
+
+    /**
      * Sprite position.
      */
     public int[] position;
@@ -37,11 +59,6 @@ public class Sprite {
      * Sprite size.
      */
     public int[] size;
-
-    /**
-     * Sprite name. (Optional).
-     */
-    public String spriteName;
 
     /**
      * Initialize new sprite.
@@ -108,6 +125,72 @@ public class Sprite {
      */
     public String getSpriteName() {
         return spriteName;
+    }
+
+    /**
+     * Get sprite path.
+    */
+    public String getSpritePath() {
+        return spritePath;
+    }
+
+    /**
+     * Append new possible state to sprite states.
+     *
+     * @param stateName State name.
+     * @param statePath State path.
+     */
+    public void appendSpriteState(String stateName, String statePath) {
+        spriteStates.put(stateName, statePath);
+    }
+
+    /**
+     * Update sprite state.
+     *
+     * @param stateName State name.
+     */
+    public void updateSpriteState(String stateName) {
+        if(!spriteStates.containsKey(stateName)) {
+            throw new IllegalStateException("Invalid sprite state.");
+        }
+
+        ImageIcon newSprite = new ImageIcon(spriteStates.get(stateName));
+
+        newSprite.getImage().flush();
+
+        sprite.setIcon(newSprite);
+
+        spriteState = stateName;
+    }
+
+    /**
+     * Update sprite state to next.
+     */
+    public void nextSpriteState() {
+        if(spriteStatePosition >= spriteStates.keySet().size() - 1) {
+            return;
+        }
+
+        spriteStatePosition++;
+
+        String nextSpriteState = spriteStates.keySet().toArray(new String[0])[spriteStatePosition];
+
+        updateSpriteState(nextSpriteState);
+    }
+
+    /**
+     * Update sprite state to previous.
+     */
+    public void previousSpriteState() {
+        if(spriteStatePosition <= 0) {
+            return;
+        }
+
+        spriteStatePosition--;
+
+        String previousSpriteState = spriteStates.keySet().toArray(new String[0])[spriteStatePosition];
+
+        updateSpriteState(previousSpriteState);
     }
 
     /**
