@@ -87,18 +87,23 @@ public void updateSpriteSize(int width, int height)
 public void setSpriteSizeByImageSize()
 ```
 
-- addSprite() - Add sprite to the window.
-- destroy() - Destroy sprite.
-- isDestroyed() - Is sprite destroyed?
-- updateSpriteName(String) - Update sprite name.
-- getSpriteName() - Get sprite name.
-- getImageSize() - Get original image size.
-- getSpriteProperties() - Get sprite properties (size & position).
-- getSpritePosition() - Get sprite position.
-- getSpriteSize() - Get sprite size.
-- updateSpritePosition(int, int) - Update sprite position.
-- updateSpriteSize(int, int) - Update sprite size.
-- setSpriteSizeByImageSize() - Set sprite size by it original image size.
+- addSprite(): Add sprite to the window.
+- destroy(): Destroy sprite.
+- isDestroyed(): Is sprite destroyed?
+- updateSpriteName(String): Update sprite name.
+- getSpriteName(): Get sprite name.
+- getSpritePath(): Get sprite path.
+- appendSpriteState(String, String): Append new sprite state.
+- updateSpriteState(String): Update current sprite state.
+- nextSpriteState(): Update current sprite state to next state.
+- previousSpriteState(): Update current sprite state to previous state.
+- getImageSize(): Get original image size.
+- getSpriteProperties(): Get sprite properties (size & position).
+- getSpritePosition(): Get sprite position.
+- getSpriteSize(): Get sprite size.
+- updateSpritePosition(int, int): Update sprite position.
+- updateSpriteSize(int, int): Update sprite size.
+- setSpriteSizeByImageSize(): Set sprite size by it original image size.
 
 #### Message.
 You completed this chapter, now you can go to "Collision.md".
