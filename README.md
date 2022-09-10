@@ -27,7 +27,7 @@ Engine have documentation.
 - [ObjectPhysics.](void2d/docs/ObjectPhysics.md)
 
 ### Engine Info.
-**Version : 1.3**<br>
+**Version : 1.4**<br>
 **License: MIT License.**
 
 <hr><p align="center"><b>^-^</b></p>
