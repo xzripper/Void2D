@@ -19,8 +19,6 @@ import java.util.ArrayList;
 
 import java.util.function.Consumer;
 
-import java.util.Date;
-
 /**
  * <h1>Class for handling simple physics of game objects.</h1>
  * Physics handler for game object.
@@ -420,8 +418,6 @@ public class ObjectPhysics {
 
                 handleGravity();
                 handleProps(onPropEnter, onPropExit);
-
-                // System.out.println(new Date().getTime());
             },
 
             DEFAULT_PHYSICS_UPDATE_DELAY,

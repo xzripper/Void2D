@@ -1,3 +1,5 @@
+// PersonController.java - Part of Void2D.
+
 package void2d.utils;
 
 import void2d.Window;
@@ -19,7 +21,7 @@ public class PersonController {
     /**
      * Default controller speed.
      */
-    public final int PERSON_CONTROLLER_SPEED_DEFAULT = 45;
+    public static final int PERSON_CONTROLLER_SPEED_DEFAULT = 45;
 
     /**
      * Does person controller activated?

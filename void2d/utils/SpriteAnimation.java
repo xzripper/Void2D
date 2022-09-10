@@ -1,3 +1,5 @@
+// SpriteAnimation.java - Part of Void2D.
+
 package void2d.utils;
 
 import void2d.Sprite;
