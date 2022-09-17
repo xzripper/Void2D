@@ -422,7 +422,7 @@ public class ObjectPhysics {
                 try {
                     Thread.sleep(DEFAULT_PHYSICS_UPDATE_DELAY);
                 } catch(InterruptedException interrupted_exc) {
-                    System.out.println("An interruption happened due calculating object force.");
+                    System.out.println("An interruption happened while calculating object force.");
 
                     forceCalculator.stopLoop();
 

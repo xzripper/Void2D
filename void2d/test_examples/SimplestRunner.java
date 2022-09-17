@@ -98,9 +98,6 @@ public class SimplestRunner {
 
         keysHandler.addKeyboardHandler(gameWindow);
 
-        gameWindow.updateWindowUpdateLoopListener(() -> {System.out.println(playerPhysics.force);});
-        gameWindow.startWindowUpdateLoop();
-
         gameWindow.showWindow();
     }
 
