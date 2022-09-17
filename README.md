@@ -21,13 +21,14 @@ Engine have documentation.
 - [Sprite.](void2d/docs/Sprite.md)
 - [Collision.](void2d/docs/Collision.md)
 - [Keyboard.](void2d/docs/Keyboard.md)
+- [Mouse.](void2d/docs/Mouse.md)
 - [Void2DThread.](void2d/docs/Void2DThread.md)
 - [UpdateLoop.](void2d/docs/UpdateLoop.md)
 - [SafeSaveAndSafeConfig.](void2d/docs/SafeSaveAndSafeConfig.md)
 - [ObjectPhysics.](void2d/docs/ObjectPhysics.md)
 
 ### Engine Info.
-**Version : 1.4**<br>
+**Version : 1.5**<br>
 **License: MIT License.**
 
 <hr><p align="center"><b>^-^</b></p>
