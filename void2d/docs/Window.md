@@ -83,6 +83,7 @@ public boolean windowVisible()
 public void updateWindowSize(int newWidth, int newHeight)
 public void updateWindowPosition(int newX, int newY)
 public void setWindowResizable(boolean resizable)
+public void setWindowIcon(String newIcon)
 public void setWindowBackground(int[] rgba) 
 public int[] getWindowSize()
 public boolean isMinimized()
@@ -105,6 +106,7 @@ public String _getOSAndArchitecture()
 - updateWindowSize(int, int): Update window size.
 - updateWindowPosition(int, int): Update window position.
 - setWindowResizable(boolean): Set is window resizable.
+- setWindowIcon(String): Set new window icon.
 - setWindowBackground(int[]): Update window background. (RGBA - Red, Green, Blue, Alpha).
 - getWindowSize(): Get window size.
 - isMinimized(): Get is window minimized.
@@ -116,6 +118,7 @@ public String _getOSAndArchitecture()
 - stopWindowUpdateLoop(): Stop window update loop.
 - _getContentPane(): Get window content pane. Not prepared for using by user. This method uses another parts of engine.
 - _addKeyboardHandler(KeyListener): Add keyboard handler. Not prepared for using by user. This method uses another parts of engine.
+- _addMouseHandler(MouseListener): Add mouse handler. Not prepared for using by user. This method uses another parts of engine.
 - _appendFiguresToDraw(Figure): Append figure to draw queue. Not prepared for using by user. This method uses another parts of engine.
 - _getOSAndArchitecture(): Get OS and architecture. Not prepared for using by user. This method uses another parts of engine.
 

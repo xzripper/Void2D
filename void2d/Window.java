@@ -14,6 +14,7 @@ import java.awt.Dimension;
 import java.awt.Container;
 
 import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 
 /**
  * <h1>Class for window creation.</h1>
@@ -67,7 +68,6 @@ public class Window {
 
         if(supportsDrawings) {
             _window = new JFrame(windowTitle) {
-                @Override
                 public void paint(Graphics graphics) {
                     _windowPaint(graphics);
                 }
@@ -202,6 +202,15 @@ public class Window {
     }
 
     /**
+     * Update window icon.
+     *
+     * @param newIcon New window icon.
+     */
+    public void setWindowIcon(String newIcon) {
+        _window.setIconImage(new ImageIcon(newIcon).getImage());
+    }
+
+    /**
      * Update window background color (in RGBA (A = Alpha)).
      *
      * @param rgba New RGBA background.
@@ -265,9 +274,7 @@ public class Window {
      */
     public void updateWindowUpdateLoopListener(Runnable listener) {
         _windowUpdateLoop.addActionListener(
-            (event) -> {
-                listener.run();
-            }
+            event -> listener.run()
         );
     }
 
@@ -284,7 +291,6 @@ public class Window {
 
     /**
      * Stop window update loop.
-     *
      */
     public void stopWindowUpdateLoop() {
         if(_windowUpdateLoop.isRunning()) {
@@ -306,10 +312,21 @@ public class Window {
      *
      * @param keyListener A key listener.
      *
-     * @apiNote This method created only for engine parts, so its better don't use in game developing.
+     * @apiNote This method created only for engine parts, so it's better don't use in game developing.
      */
     public void _addKeyboardHandler(KeyListener keyListener) {
         _window.addKeyListener(keyListener);
+    }
+
+    /**
+     * Add mouse listener to the window.
+     *
+     * @param mouseListener A mouse listener.
+     *
+     * @apiNote This method created only for engine parts, so it's better don't use in game developing.
+     */
+    public void _addMouseHandler(MouseListener mouseListener) {
+        _window.addMouseListener(mouseListener);
     }
 
     /**

@@ -72,5 +72,5 @@ public void addKeyboardHandler(Window window)
 - addKeyboardHandler(Window): Add keyboard handler to the window. Important to call!
 
 #### Message.
-You completed this chapter, now you can go to "Void2DThread.md".
+You completed this chapter, now you can go to "Mouse.md".
 <br>Good luck!

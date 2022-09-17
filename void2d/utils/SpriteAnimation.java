@@ -12,6 +12,8 @@ import void2d.Void2DThread;
 public class SpriteAnimation {
     private final Sprite sprite;
 
+    private boolean shouldStopInfAnim = false;
+
     /**
      * Default animation speed.
      */
@@ -65,6 +67,48 @@ public class SpriteAnimation {
         );
 
         animThread.run();
+    }
+
+    /**
+     * Play infinite animation.
+     */
+    public void playInfinite() {
+        if(animRunning) {
+            return;
+        }
+
+        Void2DThread infAnimThread = new Void2DThread(
+            () -> {
+                String[] spriteStates = sprite.spriteStates.keySet().toArray(new String[0]);
+
+                animRunning = true;
+
+                while(!shouldStopInfAnim) {
+                    for(String spriteState : spriteStates) {
+                        sprite.updateSpriteState(spriteState);
+
+                        try {
+                            Thread.sleep(animSpeed);
+                        } catch(InterruptedException interrupted_exc) {
+                            System.out.println(interrupted_exc.getMessage());
+                        }
+                    }
+                }
+
+                animRunning = false;
+
+                shouldStopInfAnim = false;
+            }
+        );
+
+        infAnimThread.run();
+    }
+
+    /**
+     * Stop infinity animation.
+     */
+    public void stopInfiniteAnimation() {
+        shouldStopInfAnim = true;
     }
 
     /**

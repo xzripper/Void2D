@@ -9,9 +9,10 @@ import void2d.Sprite;
 import void2d.enginePhysics.ObjectPhysics;
 
 /**
- * Physics based person controller util. (2D).
+ * Physics based person controller util. (2D).<br>
+ * Right now don't recommend to use, because this util is in BETA.
  */
-public class PhysicsBasedPersonController {
+class PhysicsBasedPersonController {
     /**
      * Default controller speed.
      */
@@ -20,7 +21,7 @@ public class PhysicsBasedPersonController {
     /**
      * Default controller mass.
      */
-    public static final int PERSON_CONTROLLER_MASS_DEFAULT = (int) Math.sqrt(PERSON_CONTROLLER_SPEED_DEFAULT);
+    public static final int PERSON_CONTROLLER_MASS_DEFAULT = PERSON_CONTROLLER_SPEED_DEFAULT * 2;
 
     /**
      * Default controller frozen property.
