@@ -71,13 +71,14 @@ To make sprite land-able, specify ground in physics constructor.
 ## ObjectPhysics methods and fields.
 ### Fields.
 ```java
-public static final float PHYSICS_VERSION = 1.f;
+public static final float PHYSICS_VERSION = 1.2f;
 public Body objectBody = Body.SQUARE_BODY;
 public boolean handlersRunning = false;
 public ArrayList<Prop> gameProps = new ArrayList<>();
 public int gameObjectMass = 0;
 public boolean frozen = false;
 public boolean bouncy = false;
+public int force = 0;
 public final static int DEFAULT_PHYSICS_UPDATE_DELAY = 25;
 public final static int DEFAULT_FALLING_SPEED = 50;
 public final static int DEFAULT_REBOUND_POWER = 80;
@@ -97,6 +98,7 @@ public void setFrozen(boolean _frozen)
 public boolean isFrozen()
 public void setBouncy(boolean _bouncy)
 public boolean isBouncy()
+public int getForce()
 public boolean inAir()
 public boolean notInAir()
 public boolean abutsGameObject(JComponent _gameObject)
@@ -119,6 +121,7 @@ public boolean isHandlersRunning()
 - isFrozen(): Is object static (frozen).
 - setBouncy(boolean): Set object bouncy.
 - isBouncy(): Get is object bouncy.
+- getForce(): Get object force.
 - inAir(): Is object in air.
 - notInAir(): Is object not in air.
 - abutsGameObject(JComponent): Is game object abuts another game object.

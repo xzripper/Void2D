@@ -30,6 +30,8 @@ public class ObjectPhysics {
 
     protected UpdateLoop handlingLoop = null;
 
+    protected UpdateLoop forceCalculator = new UpdateLoop(this::calculateForce, DEFAULT_PHYSICS_UPDATE_DELAY, true);
+
     protected boolean rebounding = false;
 
     protected boolean rolled = false;
@@ -37,7 +39,7 @@ public class ObjectPhysics {
     /**
      * Physics version.
      */
-    public static final float PHYSICS_VERSION = 1.1f;
+    public static final float PHYSICS_VERSION = 1.2f;
 
     /**
      * Object body.
@@ -68,6 +70,11 @@ public class ObjectPhysics {
      * Is object bouncy.
      */
     public boolean bouncy = false;
+
+    /**
+     * Object force.
+     */
+    public int force = 0;
 
     /**
      * Physics update loop delay.
@@ -187,6 +194,13 @@ public class ObjectPhysics {
      */
     public boolean isBouncy() {
         return bouncy;
+    }
+
+    /**
+     * Get object force.
+     */
+    public int getForce() {
+        return force;
     }
 
     /**
@@ -397,6 +411,32 @@ public class ObjectPhysics {
                 }
             }
         }
+    }
+
+    protected void calculateForce() {
+        Void2DThread forceCalculatorThread = new Void2DThread(
+            () -> {
+                int oldX = gameObject.getX();
+                int oldY = gameObject.getY();
+
+                try {
+                    Thread.sleep(DEFAULT_PHYSICS_UPDATE_DELAY);
+                } catch(InterruptedException interrupted_exc) {
+                    System.out.println("An interruption happened due calculating object force.");
+
+                    forceCalculator.stopLoop();
+
+                    return;
+                }
+
+                int newX = gameObject.getX();
+                int newY = gameObject.getY();
+
+                force = Math.abs(((newX - oldX) + (newY - oldY)));
+            }
+        );
+
+        forceCalculatorThread.run();
     }
 
     /**

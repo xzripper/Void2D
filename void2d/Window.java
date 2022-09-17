@@ -68,6 +68,7 @@ public class Window {
 
         if(supportsDrawings) {
             _window = new JFrame(windowTitle) {
+                @Override
                 public void paint(Graphics graphics) {
                     _windowPaint(graphics);
                 }

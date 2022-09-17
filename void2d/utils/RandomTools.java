@@ -73,7 +73,7 @@ public class RandomTools {
      * Generates (true or false).
      */
     public static boolean randomBool() {
-        return new boolean[] {true, false}[randomInt(0, 1)];
+        return new boolean[] {true, false} [randomInt(0, 1)];
     }
 
     /**
