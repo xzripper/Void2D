@@ -69,11 +69,6 @@ public final int DEFAULT_WINDOW_Y_POSITION = 50;
 public boolean windowVisible = false;
 ```
 
-- WINDOW_UPDATE_LOOP_DELAY: Default window update loop.
-- DEFAULT_WINDOW_X_POSITION: Default window X position after window creation.
-- DEFAULT_WINDOW_Y_POSITION: Default window Y position after window creation.
-- windowVisible: Is window visible?
-
 ### Methods.
 ```java
 public void doRepaintDuringPaint(boolean _needRepaint)

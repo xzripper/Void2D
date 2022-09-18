@@ -15,7 +15,7 @@ public class EngineInfo {
     /**
      * Engine version.
      */
-    public final static float engineVersion = 1.7f;
+    public final static float engineVersion = 1.8f;
 
     /**
      * Is version in release.

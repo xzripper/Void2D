@@ -55,6 +55,7 @@ Now you can add sprites to your window!
 ## Sprite methods and fields.
 ### Fields.
 ```java
+public final String MISSING_SPRITE_TEXTURE = EnginePartPathManager.accessEnginePartWithAbsolutePath("media\\MissingSprite.png");
 public boolean destroyed = false;
 public JLabel sprite;
 public Collision spriteCollision;
@@ -84,6 +85,7 @@ public int[] getSpritePosition()
 public int[] getSpriteSize()
 public void updateSpritePosition(int x, int y)
 public void updateSpriteSize(int width, int height)
+public void updateOriginalImageSize(int newWidth, int newHeight, boolean smooth)
 public void setSpriteSizeByImageSize()
 ```
 
@@ -103,6 +105,7 @@ public void setSpriteSizeByImageSize()
 - getSpriteSize(): Get sprite size.
 - updateSpritePosition(int, int): Update sprite position.
 - updateSpriteSize(int, int): Update sprite size.
+- updateOriginalImageSize(int, int, boolean): Update original sprite size.
 - setSpriteSizeByImageSize(): Set sprite size by it original image size.
 
 #### Message.

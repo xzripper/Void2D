@@ -2,18 +2,31 @@
 
 package void2d;
 
+import java.io.File;
+
 import javax.swing.JLabel;
+
 import javax.swing.ImageIcon;
+
+import java.awt.Image;
+
+import javax.swing.Icon;
 
 import java.util.HashMap;
 
 /**
  * <h1>Class for loading sprites into the game!</h1>
+ * Interaction with sprites!s
  */
 public class Sprite {
     protected Window window;
 
     protected String spritePath;
+
+    /**
+     * Missing sprite texture.
+     */
+    public final String MISSING_SPRITE_TEXTURE = EnginePartPathManager.accessEnginePartWithAbsolutePath("media\\MissingSprite.png");
 
     /**
      * Is sprite destroyed.
@@ -77,7 +90,7 @@ public class Sprite {
 
         int[] spriteSize = (_size == null) ? new int[] {0, 0} : _size;
 
-        sprite = new JLabel(new ImageIcon(spritePath));
+        sprite = new JLabel(new ImageIcon(new File(spritePath).exists() ? spritePath : MISSING_SPRITE_TEXTURE));
         sprite.setBounds(position[0], position[1], spriteSize[0], spriteSize[1]);
 
         spriteCollision = new Collision(sprite);
@@ -248,6 +261,25 @@ public class Sprite {
         size = new int[] {width, height};
 
         sprite.setSize(width, height);
+    }
+
+    /**
+     * Update original image size.
+     *
+     * @param newWidth New width.
+     * @param newHeight New height.
+     * @param smooth Use smooth scaling?
+     */
+    public void updateOriginalImageSize(int newWidth, int newHeight, boolean smooth) {
+        size = new int[] {newWidth, newHeight};
+
+        sprite.setSize(newWidth, newHeight);
+
+        Image updatedSprite = new ImageIcon(spritePath).getImage().getScaledInstance(newWidth, newHeight, smooth ? Image.SCALE_SMOOTH : Image.SCALE_FAST);
+
+        updatedSprite.flush();
+
+        sprite.setIcon(new ImageIcon(updatedSprite));
     }
 
     /**

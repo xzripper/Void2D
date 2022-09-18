@@ -91,5 +91,5 @@ public static int[] getMousePositionInWindow(Window window)
 - getMousePositionInWindow(Window): Get mouse position inside the window.
 
 #### Message.
-You completed this chapter, now you can go to "Void2DThread.md".
+You completed this chapter, now you can go to "Sound.md".
 <br>Good luck!
