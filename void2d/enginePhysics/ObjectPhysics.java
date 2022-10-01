@@ -30,7 +30,7 @@ public class ObjectPhysics {
 
     protected UpdateLoop handlingLoop = null;
 
-    protected UpdateLoop forceCalculator = new UpdateLoop(this::calculateForce, DEFAULT_PHYSICS_UPDATE_DELAY, true);
+    protected UpdateLoop forceCalculator = new UpdateLoop(this::calculateForce, DEFAULT_PHYSICS_UPDATE_DELAY * 2, true);
 
     protected boolean rebounding = false;
 
@@ -39,7 +39,7 @@ public class ObjectPhysics {
     /**
      * Physics version.
      */
-    public static final float PHYSICS_VERSION = 1.2f;
+    public static final float PHYSICS_VERSION = 1.3f;
 
     /**
      * Object body.
@@ -314,6 +314,7 @@ public class ObjectPhysics {
 
                         int rollSpeed = (gameObjectMass / 3) / 2;
 
+                        // Maybe `utils.Invoker.invokeWithDuration`?
                         Void2DThread objectRollThread = new Void2DThread(
                             () -> {
                                 for(int power=1; power < Math.abs(rollPower); power++) {
@@ -341,6 +342,7 @@ public class ObjectPhysics {
                 if(isBouncy()) {
                     int oldY = gameObject.getY();
 
+                    // Maybe `utils.Invoker.invokeWithDuration`?
                     Void2DThread objectUpLiftThread = new Void2DThread(
                         () -> {
                             rebounding = true;
@@ -420,7 +422,7 @@ public class ObjectPhysics {
                 int oldY = gameObject.getY();
 
                 try {
-                    Thread.sleep(DEFAULT_PHYSICS_UPDATE_DELAY);
+                    Thread.sleep(DEFAULT_PHYSICS_UPDATE_DELAY * 2);
                 } catch(InterruptedException interrupted_exc) {
                     System.out.println("An interruption happened while calculating object force.");
 

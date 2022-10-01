@@ -81,11 +81,11 @@ public class Window {
 
         _window.setBounds(DEFAULT_WINDOW_X_POSITION, DEFAULT_WINDOW_Y_POSITION, width, height);
 
-        _window.setIconImage(new ImageIcon(EnginePartPathManager.accessEnginePartWithAbsolutePath("media\\DefaultWindowIcon.png")).getImage());
+        _window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         _window.setResizable(resizable);
 
-        _window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        _window.setIconImage(new ImageIcon(EnginePartPathManager.accessEnginePartWithAbsolutePath("media\\DefaultWindowIcon.png")).getImage());
 
         _getContentPane().setBackground(Colors.colorBlack);
     }
@@ -141,6 +141,14 @@ public class Window {
                 true
             );
         }
+    }
+
+    /**
+     * Refresh window.
+     */
+    public void refresh() {
+        _window.revalidate();
+        _window.repaint();
     }
 
     /**

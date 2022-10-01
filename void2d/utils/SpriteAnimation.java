@@ -46,7 +46,7 @@ public class SpriteAnimation {
             return;
         }
 
-        String[] spriteStates = sprite.spriteStates.keySet().toArray(new String[0]);
+        String[] spriteStates = (String[]) sprite.spriteStates.getKeys();
 
         Void2DThread animThread = new Void2DThread(
             () -> {
@@ -79,7 +79,7 @@ public class SpriteAnimation {
 
         Void2DThread infAnimThread = new Void2DThread(
             () -> {
-                String[] spriteStates = sprite.spriteStates.keySet().toArray(new String[0]);
+                String[] spriteStates = (String[]) sprite.spriteStates.getKeys();
 
                 animRunning = true;
 

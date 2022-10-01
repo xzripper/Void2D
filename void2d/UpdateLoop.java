@@ -11,6 +11,9 @@ import javax.swing.Timer;
 public class UpdateLoop {
     protected Timer updateLoop;
 
+    /**
+     * Update loop delay.
+     */
     public int updateLoopDelay;
 
     /**

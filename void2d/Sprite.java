@@ -2,6 +2,8 @@
 
 package void2d;
 
+import void2d.utils.javaUtils.Dictionary;
+
 import java.io.File;
 
 import javax.swing.JLabel;
@@ -10,18 +12,19 @@ import javax.swing.ImageIcon;
 
 import java.awt.Image;
 
-import javax.swing.Icon;
-
-import java.util.HashMap;
-
 /**
  * <h1>Class for loading sprites into the game!</h1>
- * Interaction with sprites!s
+ * Interaction with sprites!
  */
 public class Sprite {
     protected Window window;
 
     protected String spritePath;
+
+    /**
+     * Empty sprite constant.
+     */
+    public static final String EMPTY = "empty";
 
     /**
      * Missing sprite texture.
@@ -46,7 +49,7 @@ public class Sprite {
     /**
      * All possible sprite states.
      */
-    public HashMap<String, String> spriteStates = new HashMap<>();
+    public Dictionary spriteStates = new Dictionary();
 
     /**
      * Current sprite state.
@@ -88,6 +91,17 @@ public class Sprite {
         position = _position;
         size = _size;
 
+        if(spritePath.equals(EMPTY)) {
+            int[] spriteSize = (_size == null) ? new int[] {0, 0} : _size;
+
+            sprite = new JLabel(new ImageIcon(EMPTY));
+            sprite.setBounds(position[0], position[1], spriteSize[0], spriteSize[1]);
+
+            spriteCollision = new Collision(sprite);
+
+            return;
+        }
+
         int[] spriteSize = (_size == null) ? new int[] {0, 0} : _size;
 
         sprite = new JLabel(new ImageIcon(new File(spritePath).exists() ? spritePath : MISSING_SPRITE_TEXTURE));
@@ -107,10 +121,9 @@ public class Sprite {
      * Destroy a sprite.
      */
     public void destroy() {
-        window._window.remove(sprite);
+        window._getContentPane().remove(sprite);
 
-        window._window.revalidate();
-        window._window.repaint();
+        window.refresh();
 
         destroyed = true;
 
@@ -154,7 +167,7 @@ public class Sprite {
      * @param statePath State path.
      */
     public void appendSpriteState(String stateName, String statePath) {
-        spriteStates.put(stateName, statePath);
+        spriteStates.add(stateName, statePath);
     }
 
     /**
@@ -167,7 +180,7 @@ public class Sprite {
             throw new IllegalStateException("Invalid sprite state.");
         }
 
-        ImageIcon newSprite = new ImageIcon(spriteStates.get(stateName));
+        ImageIcon newSprite = new ImageIcon(String.valueOf(spriteStates.get(stateName)));
 
         newSprite.getImage().flush();
 
@@ -180,13 +193,13 @@ public class Sprite {
      * Update sprite state to next.
      */
     public void nextSpriteState() {
-        if(spriteStatePosition >= spriteStates.keySet().size() - 1) {
+        if(spriteStatePosition >= spriteStates.getKeys().length - 1) {
             return;
         }
 
         spriteStatePosition++;
 
-        String nextSpriteState = spriteStates.keySet().toArray(new String[0])[spriteStatePosition];
+        String nextSpriteState = String.valueOf(spriteStates.getKeys()[spriteStatePosition]);
 
         updateSpriteState(nextSpriteState);
     }
@@ -201,7 +214,7 @@ public class Sprite {
 
         spriteStatePosition--;
 
-        String previousSpriteState = spriteStates.keySet().toArray(new String[0])[spriteStatePosition];
+        String previousSpriteState = String.valueOf(spriteStates.getKeys()[spriteStatePosition]);
 
         updateSpriteState(previousSpriteState);
     }

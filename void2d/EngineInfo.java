@@ -15,12 +15,12 @@ public class EngineInfo {
     /**
      * Engine version.
      */
-    public final static float engineVersion = 1.8f;
+    public final static float engineVersion = 1.9f;
 
     /**
      * Is version in release.
      */
-    public final static boolean engineVersionInRelease = true; // When developing new version - set to false. It fixes problems with path's.
+    public final static boolean engineVersionInRelease = false; // When developing new version - set to false. It fixes problems with path's.
 
     /**
      * Engine license.
@@ -33,12 +33,13 @@ public class EngineInfo {
     public final static String engineAuthor = "Ivan Perzhynsky";
 
     /**
-     * Get all information in array.
+     * Get all information in the array.
      */
     public static Object[] getAllInfo() {
         Object[] info = {
             engineName,
             engineVersion,
+            engineVersionInRelease,
             engineLicense,
             engineAuthor
         };

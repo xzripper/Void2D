@@ -58,7 +58,7 @@ public class Sound {
         try {
             audioInput = AudioSystem.getAudioInputStream(soundFile);
         } catch(UnsupportedAudioFileException unsupported_audio_file_exc) {
-            throw new UnsupportedOperationException("Audio file is not supported");
+            throw new UnsupportedOperationException("Audio file is not supported.");
         } catch (IOException io_exc) {
             throw new RuntimeException(String.format("An IOException raised while reading audio input stream. (%s).", io_exc.getMessage()));
         }
