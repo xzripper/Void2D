@@ -72,6 +72,7 @@ public boolean windowVisible = false;
 ### Methods.
 ```java
 public void doRepaintDuringPaint(boolean _needRepaint)
+public void refresh()
 public void showWindow()
 public void hideWindow()
 public boolean windowVisible()
@@ -95,6 +96,7 @@ public String _getOSAndArchitecture()
 ```
 
 - doRepaintDuringPaint(boolean): Repaint all objects that was drawn on the screen. (look "Figures.md").
+- refresh(): Refresh window.
 - showWindow(): Run window.
 - hideWindow(): Hide window.
 - windowVisible(): Get is window visible.
