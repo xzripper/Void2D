@@ -26,10 +26,12 @@ Engine have documentation.
 - [Void2DThread.](void2d/docs/Void2DThread.md)
 - [UpdateLoop.](void2d/docs/UpdateLoop.md)
 - [SafeSaveAndSafeConfig.](void2d/docs/SafeSaveAndSafeConfig.md)
+- [Ray.](void2d/docs/Ray.md)
+- [VisualizedRay.](void2d/docs/VisualizedRay.md)
 - [ObjectPhysics.](void2d/docs/ObjectPhysics.md)
 
 ### Engine Info.
-**Version : 1.8**<br>
+**Version : 1.9**<br>
 **License: MIT License.**
 
 <hr><p align="center"><b>^-^</b></p>
