@@ -71,7 +71,7 @@ To make sprite land-able, specify ground in physics constructor.
 ## ObjectPhysics methods and fields.
 ### Fields.
 ```java
-public static final float PHYSICS_VERSION = 1.2f;
+public static final float PHYSICS_VERSION = 1.3f;
 public Body objectBody = Body.SQUARE_BODY;
 public boolean handlersRunning = false;
 public ArrayList<Prop> gameProps = new ArrayList<>();
