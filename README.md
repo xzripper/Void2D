@@ -9,6 +9,12 @@
 
 ### What is that "Void2D"?
 #### Void2D - Mega easy, fast, high level 2D game engine with built-in physics that handles almost everything instead of user, based on Swing for Java.<br>
+#### 1.9-pre Update: Void2D supports these languages!:
+  * ***Java*** (original language),
+  * ***Scala***,
+  * ***Kotlin***,
+  * ***Groovy***,
+  * ***Clojure***.
 
 ### Documentation?
 Engine have documentation.
